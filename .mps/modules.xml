@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MPSProject">
+    <projectModules>
+      <modulePath path="$PROJECT_DIR$/languages/CoordinationOrocosGenerator/CoordinationOrocosGenerator.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/Plan/Plan.msd" folder="" />
+      <modulePath path="$PROJECT_DIR$/solutions/test/test.msd" folder="" />
+    </projectModules>
+  </component>
+</project>
