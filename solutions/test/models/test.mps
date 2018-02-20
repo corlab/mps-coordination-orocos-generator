@@ -9,8 +9,12 @@
   <registry>
     <language id="05b3ce81-ad9b-4836-b473-d98f0216c2ac" name="coordination">
       <concept id="3975843521651975716" name="coordination.structure.StateMachine" flags="ng" index="1HUUU" />
+      <concept id="6168113672289368875" name="coordination.structure.WaitDuration" flags="ng" index="A$36v">
+        <property id="6168113672289368927" name="milliseconds" index="A$37F" />
+      </concept>
       <concept id="6168113672289313863" name="coordination.structure.Transition" flags="ng" index="A$mVN">
         <reference id="6168113672289313866" name="target" index="A$mVY" />
+        <child id="6168113672289314051" name="condition" index="A$mYR" />
       </concept>
       <concept id="6168113672288845302" name="coordination.structure.StateContainer" flags="ng" index="AA3t2">
         <reference id="6168113672289185112" name="initialstate" index="ABQvG" />
@@ -50,6 +54,9 @@
       <property role="TrG5h" value="A" />
       <node concept="A$mVN" id="5Ap5lyuV2Jy" role="A$mYT">
         <ref role="A$mVY" node="5Ap5lyuV2Jf" resolve="C" />
+        <node concept="A$36v" id="3_utBqsKhgv" role="A$mYR">
+          <property role="A$37F" value="100" />
+        </node>
       </node>
       <node concept="3ACCqO" id="1msz2Lk2OLe" role="2VaVxq">
         <property role="TrG5h" value="test" />
@@ -60,6 +67,9 @@
     <node concept="AAcsC" id="5Ap5lyuV2Jf" role="AA3t3">
       <property role="TrG5h" value="C" />
       <property role="AyEUC" value="true" />
+      <node concept="A$mVN" id="3_utBqsJU2a" role="A$mYT">
+        <ref role="A$mVY" node="5FOA3OR8D_I" resolve="A" />
+      </node>
     </node>
   </node>
 </model>
