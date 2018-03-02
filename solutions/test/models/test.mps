@@ -20,6 +20,9 @@
       <concept id="1070534370425" name="jetbrains.mps.baseLanguage.structure.IntegerType" flags="in" index="10Oyi0" />
       <concept id="1070534644030" name="jetbrains.mps.baseLanguage.structure.BooleanType" flags="in" index="10P_77" />
       <concept id="1225271177708" name="jetbrains.mps.baseLanguage.structure.StringType" flags="in" index="17QB3L" />
+      <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
+        <property id="1068580320021" name="value" index="3cmrfH" />
+      </concept>
       <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
@@ -122,6 +125,7 @@
       </concept>
       <concept id="8346328839530554457" name="SystemsCoordination.structure.VariableDecl" flags="ng" index="2D1jA2">
         <child id="8346328839530554904" name="type" index="2D1jJ3" />
+        <child id="8346328839530554914" name="initializer" index="2D1jJT" />
       </concept>
       <concept id="5685633502229650427" name="SystemsCoordination.structure.ParameterAssignment" flags="ng" index="2D$zpK">
         <reference id="5685633502229904882" name="parameter" index="2DB_1T" />
@@ -322,10 +326,17 @@
           <property role="TrG5h" value="port" />
           <node concept="10Oyi0" id="7rBr3pZFEoR" role="2D1jJ3" />
         </node>
+        <node concept="2D1jA2" id="4OTcq5cMxXY" role="2VaVxq">
+          <property role="TrG5h" value="bla" />
+          <node concept="10Oyi0" id="4OTcq5cMzRA" role="2D1jJ3" />
+          <node concept="3cmrfG" id="B3BpmGT$it" role="2D1jJT">
+            <property role="3cmrfH" value="1" />
+          </node>
+        </node>
         <node concept="A$mVN" id="7rBr3pZFFfi" role="A$mYT">
           <ref role="A$mVY" node="7rBr3pZFF57" resolve="exitState" />
           <node concept="1rc8GN" id="7rBr3pZFFfu" role="1rfkgY">
-            <property role="1rc8JC" value="this.reciever.in_counter_port(d) if (d&gt;4)" />
+            <property role="1rc8JC" value="this.reciever.in_counter_port(port) if (port&gt;4)" />
           </node>
           <node concept="2RThQF" id="7rBr3pZFFfE" role="mMxAl">
             <node concept="2OqwBi" id="7rBr3pZFFn6" role="2RThOI">
@@ -378,9 +389,6 @@
           <ref role="A$mVY" node="7rBr3pZFBXF" resolve="running" />
           <node concept="1rc8GN" id="7rBr3pZFC5l" role="1rfkgY">
             <property role="1rc8JC" value="this.reciever.isDone()" />
-          </node>
-          <node concept="A$mYG" id="4_xSw_CzZG$" role="mMxAl">
-            <property role="A$mZM" value="test" />
           </node>
         </node>
       </node>
