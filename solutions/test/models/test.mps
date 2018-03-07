@@ -273,7 +273,7 @@
       </node>
     </node>
     <node concept="2WYcwU" id="7rBr3pZF$$3" role="3ttgI2">
-      <property role="TrG5h" value="reciever" />
+      <property role="TrG5h" value="receiver" />
       <ref role="2WYf9R" node="7rBr3pZF$09" resolve="testComponent" />
       <node concept="FWJLR" id="7rBr3pZF$$A" role="l9eUl">
         <ref role="FWJLQ" node="7rBr3pZF$6b" resolve="in_counter_port" />
@@ -287,6 +287,33 @@
       <ref role="ABQvG" node="7rBr3pZF$LP" resolve="initState" />
       <node concept="AAcsC" id="7rBr3pZFF57" role="AA3t3">
         <property role="TrG5h" value="exitState" />
+        <property role="AyEUC" value="true" />
+        <node concept="2RThQF" id="7YnjO48IhZy" role="A$mYV">
+          <node concept="2OqwBi" id="7YnjO48Ii6V" role="2RThOI">
+            <node concept="2OqwBi" id="7YnjO48IhZW" role="2Oq$k0">
+              <node concept="2RT1ic" id="7YnjO48IhZI" role="2Oq$k0" />
+              <node concept="3pvUrN" id="7YnjO48Ii2x" role="2OqNvi">
+                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
+              </node>
+            </node>
+            <node concept="2D$_L7" id="7YnjO48IibV" role="2OqNvi">
+              <ref role="2D$zFo" node="7rBr3pZF$MW" resolve="stop" />
+            </node>
+          </node>
+        </node>
+        <node concept="2RThQF" id="7YnjO48Iicc" role="A$mYV">
+          <node concept="2OqwBi" id="7YnjO48IikE" role="2RThOI">
+            <node concept="2OqwBi" id="7YnjO48IidF" role="2Oq$k0">
+              <node concept="2RT1ic" id="7YnjO48Iidq" role="2Oq$k0" />
+              <node concept="3pvUrN" id="7YnjO48Iigg" role="2OqNvi">
+                <ref role="3pvUL9" node="7rBr3pZF$z7" resolve="sender" />
+              </node>
+            </node>
+            <node concept="2D$_L7" id="7YnjO48IipE" role="2OqNvi">
+              <ref role="2D$zFo" node="7rBr3pZF$Tc" resolve="stop" />
+            </node>
+          </node>
+        </node>
       </node>
       <node concept="AAcsC" id="7rBr3pZFBXF" role="AA3t3">
         <property role="TrG5h" value="running" />
@@ -295,7 +322,7 @@
             <node concept="2OqwBi" id="7rBr3pZFEp$" role="2Oq$k0">
               <node concept="2RT1ic" id="7rBr3pZFEpm" role="2Oq$k0" />
               <node concept="3pvUrN" id="7rBr3pZFEtE" role="2OqNvi">
-                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="reciever" />
+                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
               </node>
             </node>
             <node concept="2D$_L7" id="7rBr3pZFEB4" role="2OqNvi">
@@ -336,14 +363,14 @@
         <node concept="A$mVN" id="7rBr3pZFFfi" role="A$mYT">
           <ref role="A$mVY" node="7rBr3pZFF57" resolve="exitState" />
           <node concept="1rc8GN" id="7rBr3pZFFfu" role="1rfkgY">
-            <property role="1rc8JC" value="this.reciever.in_counter_port(port) if (port&gt;4)" />
+            <property role="1rc8JC" value="in_counter_port(port) if (port&gt;4)" />
           </node>
           <node concept="2RThQF" id="7rBr3pZFFfE" role="mMxAl">
             <node concept="2OqwBi" id="7rBr3pZFFn6" role="2RThOI">
               <node concept="2OqwBi" id="7rBr3pZFFg7" role="2Oq$k0">
                 <node concept="2RT1ic" id="7rBr3pZFFfQ" role="2Oq$k0" />
                 <node concept="3pvUrN" id="7rBr3pZFFiG" role="2OqNvi">
-                  <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="reciever" />
+                  <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
                 </node>
               </node>
               <node concept="2D$_L7" id="7rBr3pZFFqz" role="2OqNvi">
@@ -371,7 +398,7 @@
             <node concept="2OqwBi" id="7rBr3pZFBzz" role="2Oq$k0">
               <node concept="2RT1ic" id="7rBr3pZFBzl" role="2Oq$k0" />
               <node concept="3pvUrN" id="7rBr3pZFBBD" role="2OqNvi">
-                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="reciever" />
+                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
               </node>
             </node>
             <node concept="2D$_L7" id="7rBr3pZFBL3" role="2OqNvi">
@@ -388,7 +415,7 @@
         <node concept="A$mVN" id="7rBr3pZFC4_" role="A$mYT">
           <ref role="A$mVY" node="7rBr3pZFBXF" resolve="running" />
           <node concept="1rc8GN" id="7rBr3pZFC5l" role="1rfkgY">
-            <property role="1rc8JC" value="this.reciever.isDone()" />
+            <property role="1rc8JC" value="if isDone()" />
           </node>
         </node>
       </node>
@@ -412,7 +439,7 @@
             <node concept="2OqwBi" id="7rBr3pZF_dv" role="2Oq$k0">
               <node concept="2RT1ic" id="7rBr3pZF_dh" role="2Oq$k0" />
               <node concept="3pvUrN" id="7rBr3pZF_rK" role="2OqNvi">
-                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="reciever" />
+                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
               </node>
             </node>
             <node concept="2D$_L7" id="7rBr3pZF__a" role="2OqNvi">
@@ -425,7 +452,7 @@
             <node concept="2OqwBi" id="7rBr3pZF_T5" role="2Oq$k0">
               <node concept="2RT1ic" id="7rBr3pZF_SR" role="2Oq$k0" />
               <node concept="3pvUrN" id="7rBr3pZFA8R" role="2OqNvi">
-                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="reciever" />
+                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
               </node>
             </node>
             <node concept="2D$_L7" id="7rBr3pZFAgI" role="2OqNvi">
@@ -444,7 +471,7 @@
             <node concept="2OqwBi" id="7rBr3pZFBlc" role="2Oq$k0">
               <node concept="2RT1ic" id="7rBr3pZFBkY" role="2Oq$k0" />
               <node concept="3pvUrN" id="7rBr3pZFBpi" role="2OqNvi">
-                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="reciever" />
+                <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
               </node>
             </node>
             <node concept="2D$_L7" id="7rBr3pZFByG" role="2OqNvi">

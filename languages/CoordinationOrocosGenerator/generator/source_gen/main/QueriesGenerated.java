@@ -68,7 +68,7 @@ public class QueriesGenerated {
 
     return "action not implemented" + SNodeOperations.getConcept(_context.getNode());
   }
-  public static Object propertyMacro_GetPropertyValue_3878055658121416568(final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_9193904305037769860(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), MetaAdapterFactory.getProperty(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x110396eaaa4L, 0x110396ec041L, "name"));
   }
   public static Object propertyMacro_GetPropertyValue_5287755967545614832(final PropertyMacroContext _context) {
@@ -115,6 +115,9 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_3878055658121654690(final IfMacroContext _context) {
     return SLinkOperations.getTarget((SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), MetaAdapterFactory.getConcept(0x5b3ce81ad9b4836L, 0xb473d98f0216c2acL, 0x372d089e369aa624L, "coordination.structure.StateMachine"))), MetaAdapterFactory.getReferenceLink(0x5b3ce81ad9b4836L, 0xb473d98f0216c2acL, 0x55998ab47301bdf6L, 0x55998ab47306ed58L, "initialstate")) == _context.getNode();
+  }
+  public static SNode sourceNodeQuery_9193904305037879759(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x10b5a06d1a494cbdL, 0xa111d36c8106bb63L, 0x73d41ddbdad12459L, 0x73d41ddbdad12618L, "type"));
   }
   public static SNode sourceNodeQuery_5287755967545735076(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), MetaAdapterFactory.getContainmentLink(0x10b5a06d1a494cbdL, 0xa111d36c8106bb63L, 0x3051f4533250b577L, 0x3051f4533250b580L, "lifecycle"));
