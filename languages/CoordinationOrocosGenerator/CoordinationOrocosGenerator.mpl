@@ -18,6 +18,7 @@
         <dependency reexport="false">05b3ce81-ad9b-4836-b473-d98f0216c2ac(coordination)</dependency>
         <dependency reexport="false">10b5a06d-1a49-4cbd-a111-d36c8106bb63(SystemsCoordination)</dependency>
         <dependency reexport="false">218e40b4-75d4-4de8-83e6-b31e4da8bcee(Component)</dependency>
+        <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
       </dependencies>
       <languageVersions>
         <language slang="l:990507d3-3527-4c54-bfe9-0ca3c9c6247a:com.dslfoundry.plaintextgen" version="0" />

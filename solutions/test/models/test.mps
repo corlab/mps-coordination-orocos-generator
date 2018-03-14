@@ -23,8 +23,8 @@
       <concept id="1068580320020" name="jetbrains.mps.baseLanguage.structure.IntegerConstant" flags="nn" index="3cmrfG">
         <property id="1068580320021" name="value" index="3cmrfH" />
       </concept>
-      <concept id="1068581242875" name="jetbrains.mps.baseLanguage.structure.PlusExpression" flags="nn" index="3cpWs3" />
       <concept id="1068581517677" name="jetbrains.mps.baseLanguage.structure.VoidType" flags="in" index="3cqZAl" />
+      <concept id="1081506762703" name="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" flags="nn" index="3eOSWO" />
       <concept id="1081773326031" name="jetbrains.mps.baseLanguage.structure.BinaryOperation" flags="nn" index="3uHJSO">
         <child id="1081773367579" name="rightExpression" index="3uHU7w" />
         <child id="1081773367580" name="leftExpression" index="3uHU7B" />
@@ -41,7 +41,9 @@
         <reference id="6055303931581444256" name="componentDescription" index="2WYf9R" />
         <child id="494146162517828036" name="refPorts" index="l9eUl" />
       </concept>
-      <concept id="6055303931581434605" name="Component.structure.ComponentInst" flags="ng" index="2WYcwU" />
+      <concept id="6055303931581434605" name="Component.structure.ComponentInst" flags="ng" index="2WYcwU">
+        <reference id="4350366299341202100" name="stateMachine" index="2BjVAH" />
+      </concept>
       <concept id="1695646464731827433" name="Component.structure.Operation" flags="ng" index="3tteAg">
         <child id="1695646464731834562" name="returnType" index="3ttcQV" />
         <child id="1695646464731834565" name="inputParameters" index="3ttcQW" />
@@ -83,6 +85,7 @@
         <child id="926862060402702775" name="actions" index="mMxAl" />
         <child id="6168113672289314051" name="condition" index="A$mYR" />
         <child id="7693917789697543497" name="jexlCondition" index="1rfkgY" />
+        <child id="7493151127585955448" name="oclTransition" index="1JUhGS" />
       </concept>
       <concept id="6168113672289314072" name="coordination.structure.LogMessage" flags="ng" index="A$mYG">
         <property id="6168113672289314118" name="message" index="A$mZM" />
@@ -137,7 +140,12 @@
       </concept>
       <concept id="5685633502229591343" name="SystemsCoordination.structure.LifeCycle" flags="ng" index="2D$Ly$" />
       <concept id="8101035457271872607" name="SystemsCoordination.structure.LocalThisExpression" flags="ng" index="2RT1ic" />
+      <concept id="194626983456930515" name="SystemsCoordination.structure.PortReadAbstractCondition" flags="ng" index="3m58VA">
+        <reference id="194626983457960864" name="param" index="3m1cul" />
+        <reference id="194626983457028804" name="readPort" index="3m6wVL" />
+      </concept>
       <concept id="1388645655552340734" name="SystemsCoordination.structure.LifeCycleWrapper" flags="ng" index="3pkOsz">
+        <reference id="4568714447334420966" name="parentComponent" index="1eXQhN" />
         <reference id="1388645655553886051" name="system" index="3pqbaY" />
       </concept>
       <concept id="1388645655554741038" name="SystemsCoordination.structure.GlobalComponentInstReference" flags="ng" index="3pvUrN">
@@ -279,9 +287,18 @@
         <ref role="FWJLQ" node="7rBr3pZF$6b" resolve="in_counter_port" />
       </node>
     </node>
+    <node concept="2WYcwU" id="3XBlplL$2sG" role="3ttgI2">
+      <property role="TrG5h" value="receiver2" />
+      <ref role="2WYf9R" node="7rBr3pZF$09" resolve="testComponent" />
+      <ref role="2BjVAH" node="7rBr3pZF$EE" resolve="generatedSM" />
+      <node concept="FWJLR" id="3XBlplL$2t_" role="l9eUl">
+        <ref role="FWJLQ" node="7rBr3pZF$6b" resolve="in_counter_port" />
+      </node>
+    </node>
   </node>
   <node concept="3pkOsz" id="7rBr3pZF$EE">
     <ref role="3pqbaY" node="7rBr3pZF$th" resolve="testSystem" />
+    <ref role="1eXQhN" node="7rBr3pZF$09" resolve="testComponent" />
     <node concept="2D$Ly$" id="7rBr3pZF$EF" role="20k7j">
       <property role="TrG5h" value="generatedSM" />
       <ref role="ABQvG" node="7rBr3pZF$LP" resolve="initState" />
@@ -360,33 +377,18 @@
             <property role="3cmrfH" value="1" />
           </node>
         </node>
-        <node concept="A$mVN" id="7rBr3pZFFfi" role="A$mYT">
+        <node concept="A$mVN" id="6vX1k085pB1" role="A$mYT">
           <ref role="A$mVY" node="7rBr3pZFF57" resolve="exitState" />
-          <node concept="1rc8GN" id="7rBr3pZFFfu" role="1rfkgY">
-            <property role="1rc8JC" value="in_counter_port(port) if (port&gt;4)" />
+          <node concept="3m58VA" id="6vX1k085pB_" role="A$mYR">
+            <ref role="3m6wVL" node="7rBr3pZF$$A" />
+            <ref role="3m1cul" node="7rBr3pZFEoa" resolve="port" />
           </node>
-          <node concept="2RThQF" id="7rBr3pZFFfE" role="mMxAl">
-            <node concept="2OqwBi" id="7rBr3pZFFn6" role="2RThOI">
-              <node concept="2OqwBi" id="7rBr3pZFFg7" role="2Oq$k0">
-                <node concept="2RT1ic" id="7rBr3pZFFfQ" role="2Oq$k0" />
-                <node concept="3pvUrN" id="7rBr3pZFFiG" role="2OqNvi">
-                  <ref role="3pvUL9" node="7rBr3pZF$$3" resolve="receiver" />
-                </node>
-              </node>
-              <node concept="2D$_L7" id="7rBr3pZFFqz" role="2OqNvi">
-                <ref role="2D$zFo" node="7rBr3pZF$7E" resolve="msg" />
-                <node concept="2D$zpK" id="7rBr3pZFFq_" role="2DASKs">
-                  <ref role="2DB_1T" node="7rBr3pZF$83" resolve="s" />
-                  <node concept="3cpWs3" id="4_xSw_CyIyw" role="2DB_1W">
-                    <node concept="xUqt6" id="4_xSw_CyIz$" role="3uHU7w">
-                      <ref role="xUqjc" node="7rBr3pZFEoa" resolve="port" />
-                    </node>
-                    <node concept="Xl_RD" id="7rBr3pZFFrh" role="3uHU7B">
-                      <property role="Xl_RC" value="message recieved: " />
-                    </node>
-                  </node>
-                </node>
-              </node>
+          <node concept="3eOSWO" id="6vX1k085pCc" role="1JUhGS">
+            <node concept="3cmrfG" id="6vX1k085pCZ" role="3uHU7w">
+              <property role="3cmrfH" value="4" />
+            </node>
+            <node concept="xUqt6" id="6vX1k085pBL" role="3uHU7B">
+              <ref role="xUqjc" node="7rBr3pZFEoa" resolve="port" />
             </node>
           </node>
         </node>
@@ -412,11 +414,8 @@
             </node>
           </node>
         </node>
-        <node concept="A$mVN" id="7rBr3pZFC4_" role="A$mYT">
+        <node concept="A$mVN" id="6vX1k0851TG" role="A$mYT">
           <ref role="A$mVY" node="7rBr3pZFBXF" resolve="running" />
-          <node concept="1rc8GN" id="7rBr3pZFC5l" role="1rfkgY">
-            <property role="1rc8JC" value="if isDone()" />
-          </node>
         </node>
       </node>
       <node concept="AAcsC" id="7rBr3pZF$LP" role="AA3t3">
